@@ -1,16 +1,13 @@
 ({
-	loadChevron : function(component, event, helper) {
-		
+	loadChevron : function(component, event, helper) {		
         var action = component.get('c.getChevronData');
 		var txt_recordId = component.get("v.recordId");
-		var txt_FieldName = component.get("v.fieldName");	
-
+		var txt_FieldName = component.get("v.fieldName");
          action.setParams({
             recordId : txt_recordId,
             fieldName : txt_FieldName 
         });
-        action.setStorable();
-        
+        action.setStorable();        
         action.setCallback(this, function(res) { 
             helper.handleCallback(component, event, helper,res); 
         }); 
